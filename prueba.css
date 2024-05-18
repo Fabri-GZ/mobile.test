@@ -1,0 +1,231 @@
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat',Helvetica,Arial,Lucida,sans-serif;
+}
+
+.whatsapp-icon-container {
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  z-index: 2000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.whatsapp-icon-container .whatsapp-overlay {
+  background-color: #25d366;
+  color: #FFF;
+  border-radius: 50px;
+  text-align: center;
+  font-size: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.whatsapp-icon-container:hover {
+  scale: 1.1;
+  transition: all 0.3s ease;
+} 
+@media (min-width: 576px) {
+    .whatsapp-icon-container .whatsapp-overlay {
+        width: 70px;
+        height: 70px;
+    }
+}
+
+@media (max-width: 576px) {
+    .whatsapp-icon-container .whatsapp-overlay {
+        width: 75px;
+        height: 75px;
+        font-size: 45px;
+    }
+}
+
+.whatsapp-icon-container a {
+    text-decoration: none;
+}
+
+header {
+    background-color: #18181A;
+    backdrop-filter: blur(18px) saturate(180%);
+    display: flex;
+    align-items: center;
+    padding: 0 32px;
+    top: 0;
+    position: sticky;
+    justify-content: space-between;
+    transition: all 0.5s ease;
+    z-index: 1100;
+}
+
+#header{
+    max-width: 100%;
+}
+
+#row {
+    display: flex;
+    flex-wrap: nowrap;
+    width: 100%;
+}
+
+header img {
+    width: 190px;
+    height: 95px;
+}
+
+header ul {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    right: 20px;
+}
+
+header ul li a {
+    text-decoration: none;
+    font-size: 22px;
+    font-weight: 900;
+    color: #ccc;
+    font-weight: 600;
+    padding: 8px 0;
+    transition: all 0.5s ease;
+    border-bottom: 3px solid #cccccc00;
+}
+
+.header ul li a.active,
+.header ul li a:hover {
+  color: #fff;
+  border-bottom: 3px solid #fff;
+}
+
+@media (min-width: 991px) {
+    #hamburger {
+        display: none;
+    }
+    header ul {
+        display: flex;
+    }
+}
+
+@media (max-width: 991px) {
+    .hamburger {
+        display: inline-block;
+    }
+
+    .header {
+        background-color: #10175ce6;
+        padding: 10px;
+    }
+
+    header ul {
+        display: none;
+    }
+}
+
+.hamburger {
+    padding: 15px 15px;
+    display: inline-block;
+    cursor: pointer;
+    transition-property: opacity, filter;
+    transition-duration: 0.15s;
+    transition-timing-function: linear;
+    text-transform: none;
+    background-color: transparent;
+    border: 0;
+    margin: 0;
+    overflow: visible; 
+}
+
+    .hamburger.is-active .hamburger-inner,
+    .hamburger.is-active .hamburger-inner::before,
+    .hamburger.is-active .hamburger-inner::after {
+      background-color: #fff;
+      transition: all 0.3s ease;
+     }
+  
+  .hamburger-box {
+    width: 40px;
+    height: 24px;
+    display: inline-block;
+    position: relative; }
+  
+  .hamburger-inner {
+    display: block;
+    top: 50%;
+    margin-top: -2px; 
+    }
+
+    .hamburger-inner, .hamburger-inner::before, .hamburger-inner::after {
+      width: 40px;
+      height: 4px;
+      background-color: #fff;
+      border-radius: 4px;
+      position: absolute;
+      transition-property: transform;
+      transition-duration: 0.15s;
+      transition-timing-function: ease; 
+    }
+
+    .hamburger-inner::before, .hamburger-inner::after {
+      content: "";
+      display: block; 
+    }
+
+    .hamburger-inner::before {
+      top: -10px;
+    }
+
+    .hamburger-inner::after {
+      bottom: -10px; 
+    }
+
+    .hamburger--spin .hamburger-inner {
+    transition-duration: 0.22s;
+    transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19); 
+    }
+
+    .hamburger--spin .hamburger-inner::before {
+      transition: top 0.1s 0.25s ease-in, opacity 0.1s ease-in; 
+    }
+
+    .hamburger--spin .hamburger-inner::after {
+      transition: bottom 0.1s 0.25s ease-in, transform 0.22s cubic-bezier(0.55, 0.055, 0.675, 0.19); 
+    }
+
+    .hamburger--spin.is-active .hamburger-inner {
+      transform: rotate(225deg);
+      transition-delay: 0.12s;
+      transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1); 
+    }
+
+    .hamburger--spin.is-active .hamburger-inner::before {
+        top: 0;
+        opacity: 0;
+        transition: top 0.1s ease-out, opacity 0.1s 0.12s ease-out; 
+    }
+
+    .hamburger--spin.is-active .hamburger-inner::after {
+        bottom: 0;
+        transform: rotate(-90deg);
+        transition: bottom 0.1s ease-out, transform 0.22s 0.12s cubic-bezier(0.215, 0.61, 0.355, 1);
+    }
